@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#191725" />
+  <meta name="description" content="Um caderno noturno para guardar imagens, frases e pequenos sinais de luz." />
+  <title>Estrelário — caderno noturno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="layout-overrides.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="sky" id="sky" aria-hidden="true"></div>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="wordmark" href="#notas" aria-label="Voltar para as notas">
+      <span class="wordmark-mark">✦</span>
+      <span class="wordmark-name">Estrelário</span>
+      <span class="wordmark-year">/ 26</span>
+    </a>
+    <nav class="primary-nav" aria-label="Navegação principal">
+      <button class="nav-link active" type="button" data-page="notas">Notas <span>01</span></button>
+      <button class="nav-link" type="button" data-page="estetica">Estética <span>02</span></button>
+      <button class="nav-link" type="button" data-page="escrever">Escrever <span>03</span></button>
+    </nav>
+    <div class="header-status"><span class="status-dot"></span> arquivo aberto</div>
+  </header>
+
+  <main>
+    <section class="page active" id="notas" aria-labelledby="notes-title">
+      <div class="notes-workspace">
+        <aside class="notes-sidebar" aria-label="Atalhos do caderno">
+          <div class="sidebar-emblem" aria-hidden="true"><span>◎</span><small>Estrelário</small></div>
+          <div class="sidebar-divider"></div>
+          <button class="sidebar-tool active" type="button" data-filter-shortcut="tudo"><span class="tool-icon">⌂</span><span>início</span></button>
+          <button class="sidebar-tool" type="button" data-filter-shortcut="foto"><span class="tool-icon">▣</span><span>imagens</span></button>
+          <button class="sidebar-tool" type="button" data-filter-shortcut="texto"><span class="tool-icon">✎</span><span>textos</span></button>
+          <div class="sidebar-divider"></div>
+          <button class="sidebar-tool" type="button" data-go="escrever"><span class="tool-icon">⊕</span><span>criar</span></button>
+          <button class="sidebar-tool profile-trigger" type="button" data-profile-open><span class="tool-icon" id="profileAvatarSmall">○</span><span>perfil</span></button>
+          <div class="sidebar-bottom"><span class="sidebar-dot"></span><span>arquivo<br />aberto</span></div>
+        </aside>
+
+        <div class="notes-main-column">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker"><span class="kicker-line"></span> volume 01 · novembro de 2026</p>
+          <h1 id="notes-title">Um céu pequeno<br /><em>na margem do papel.</em></h1>
+          <p class="hero-lede">Fotos, textos curtos e comentários à margem. Um caderno para o que quase passa despercebido — e por isso merece ficar.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-go="estetica">Ler a estética <span>↗</span></button>
+            <button class="text-link" type="button" data-go="escrever">deixar uma nota <span>＋</span></button>
+          </div>
+        </div>
+        <div class="hero-figure" aria-label="Constelação de objetos cotidianos">
+          <div class="figure-label label-top">objetos encontrados</div>
+          <div class="constellation constellation-main">
+            <span class="constellation-dot dot-a"></span><span class="constellation-dot dot-b"></span><span class="constellation-dot dot-c"></span><span class="constellation-dot dot-d"></span>
+            <span class="constellation-line line-a"></span><span class="constellation-line line-b"></span><span class="constellation-line line-c"></span>
+            <span class="constellation-star">✦</span>
+          </div>
+          <div class="figure-note"><span>01</span><p>as coisas que ficam<br /><em>quando a luz baixa</em></p></div>
+          <div class="figure-label label-bottom">coleção pessoal · aberto</div>
+        </div>
+      </div>
+
+      <section class="featured-carousel" aria-labelledby="featured-title">
+        <div class="featured-heading">
+          <div><p class="kicker"><span class="kicker-line"></span> imagens em destaque</p><h2 id="featured-title">O que ficou<br /><em>aceso no arquivo.</em></h2></div>
+          <div class="featured-controls"><button class="carousel-arrow" type="button" id="featuredPrev" aria-label="Imagem anterior">←</button><button class="carousel-arrow" type="button" id="featuredNext" aria-label="Próxima imagem">→</button></div>
+        </div>
+        <div class="featured-viewport" id="featuredViewport" tabindex="0" role="region" aria-label="Imagens destacadas do arquivo">
+          <div class="featured-track" id="featuredTrack">
+            <article class="featured-slide" data-featured-slide="0" aria-hidden="false"><div class="featured-image featured-image-reading"><span class="image-stamp">01 · leitura</span><span class="image-object image-book">A</span><span class="image-object image-cup">◒</span><span class="image-caption">uma página aberta<br /><em>e a casa em silêncio</em></span></div><div class="featured-slide-copy"><span>09 nov 2026</span><strong>O corpo também lê.</strong><small>fotografia encontrada no caderno</small></div></article>
+            <article class="featured-slide" data-featured-slide="1" aria-hidden="true"><div class="featured-image featured-image-flowers"><span class="image-stamp">02 · flores</span><span class="image-object image-flower">✿</span><span class="image-object image-stem">⌁</span><span class="image-caption">guardar é achatar<br /><em>com cuidado</em></span></div><div class="featured-slide-copy"><span>03 nov 2026</span><strong>Flores na página 61.</strong><small>pequenos vestígios de uma estação</small></div></article>
+            <article class="featured-slide" data-featured-slide="2" aria-hidden="true"><div class="featured-image featured-image-map"><span class="image-stamp">03 · mapa</span><span class="image-object image-pin">✦</span><span class="image-object image-route">╱╲╱</span><span class="image-caption">o mundo inteiro<br /><em>espetado na parede</em></span></div><div class="featured-slide-copy"><span>12 out 2026</span><strong>Cada alfinete é uma volta.</strong><small>um mapa para não esquecer o caminho</small></div></article>
+            <article class="featured-slide" data-featured-slide="3" aria-hidden="true"><div class="featured-image featured-image-coffee"><span class="image-stamp">04 · casa</span><span class="image-object image-mug">◡</span><span class="image-object image-steam">∿</span><span class="image-caption">a caneca ainda morna<br /><em>o livro finge esperar</em></span></div><div class="featured-slide-copy"><span>12 set 2026</span><strong>Uma pausa que coube na mesa.</strong><small>luz baixa, papel e café</small></div></article>
+            <article class="featured-slide" data-featured-slide="4" aria-hidden="true"><div class="featured-image featured-image-papers"><span class="image-stamp">05 · arquivo</span><span class="image-object image-note-paper">✎</span><span class="image-object image-label">350</span><span class="image-caption">memória empilhada<br /><em>até virar mobília</em></span></div><div class="featured-slide-copy"><span>05 set 2026</span><strong>Cadernos que não terminam.</strong><small>papéis encontrados no armário</small></div></article>
+          </div>
+        </div>
+        <div class="featured-footer"><div class="featured-dots" id="featuredDots" role="tablist" aria-label="Selecionar imagem destacada"></div><span class="featured-counter" id="featuredCounter">01 / 05</span><p>arraste para descobrir · toque nas setas</p></div>
+      </section>
+
+      <div class="section-intro">
+        <div>
+          <p class="kicker"><span class="kicker-line"></span> caderno vivo</p>
+          <h2>As notas <span class="count-badge" id="noteCount">17</span></h2>
+        </div>
+        <p class="section-aside">Um inventário de pequenas cenas.<br />Leia sem pressa.</p>
+      </div>
+
+      <div class="filter-row" role="group" aria-label="Filtrar notas">
+        <button class="filter-chip active" type="button" data-filter="tudo">Todas <span>17</span></button>
+        <button class="filter-chip" type="button" data-filter="foto">Com imagem <span>12</span></button>
+        <button class="filter-chip" type="button" data-filter="texto">Só texto <span>05</span></button>
+        <span class="filter-rule"></span>
+        <span class="filter-hint">clique para abrir</span>
+      </div>
+      <div class="notes-grid" id="notesList"></div>
+        </div>
+
+        <aside class="notes-rightbar" aria-label="Resumo do arquivo">
+          <div class="rightbar-card constellation-card">
+            <div class="rightbar-label">constelação de hoje</div>
+            <div class="mini-constellation" aria-hidden="true"><span class="mini-star">✦</span><i class="mini-dot mini-one"></i><i class="mini-dot mini-two"></i><i class="mini-dot mini-three"></i><i class="mini-line mini-line-one"></i><i class="mini-line mini-line-two"></i></div>
+            <p>as coisas pequenas<br /><em>também fazem mapa</em></p>
+          </div>
+          <div class="rightbar-card activity-card">
+            <div class="rightbar-label">atividade recente</div>
+            <div class="activity-item"><span class="activity-bullet"></span><p><strong>17</strong> notas no caderno<small>atualizado agora</small></p></div>
+            <div class="activity-item"><span class="activity-bullet"></span><p><strong>12</strong> imagens encontradas<small>no arquivo pessoal</small></p></div>
+            <div class="activity-item"><span class="activity-bullet"></span><p><strong>03</strong> margens anotadas<small>última: ontem</small></p></div>
+          </div>
+          <div class="rightbar-card tags-card">
+            <div class="rightbar-label">palavras que voltam</div>
+            <div class="tag-cloud"><span>leitura</span><span>casa</span><span>flores</span><span>café</span><span>memória</span></div>
+          </div>
+          <button class="rightbar-create" type="button" data-go="escrever"><span>＋</span> guardar outra coisa</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page" id="estetica" aria-labelledby="aesthetic-title">
+      <div class="page-heading split-heading">
+        <div><p class="kicker"><span class="kicker-line"></span> arquivo de referências · 02</p><h1 id="aesthetic-title">Uma estética<br /><em>de papel, pó e estrelas.</em></h1></div>
+        <p class="heading-aside">Um pequeno universo feito de objetos cotidianos, fotografias imperfeitas, livros abertos e lembranças guardadas entre páginas.</p>
+      </div>
+      <div class="aesthetic-layout">
+        <article class="aesthetic-card palette-card">
+          <div class="card-index">01 / paleta noturna</div>
+          <h2>Cores que parecem lembranças.</h2>
+          <p>Vinho escuro, papel envelhecido, rosa empoeirado e a sombra azulada de uma noite tranquila.</p>
+          <div class="swatches"><span style="--swatch:#191725"><i>#191725</i></span><span style="--swatch:#713747"><i>#713747</i></span><span style="--swatch:#c1a0ac"><i>#c1a0ac</i></span><span style="--swatch:#eee5d5"><i>#eee5d5</i></span><span style="--swatch:#656077"><i>#656077</i></span></div>
+        </article>
+        <article class="aesthetic-card found-card">
+          <div class="card-index">02 / objetos encontrados</div>
+          <h2>Pequenas coisas,<br /><em>grandes mundos.</em></h2>
+          <div class="object-list"><span>canecas esquecidas</span><span>flores prensadas</span><span>mapas rabiscados</span><span>livros com páginas dobradas</span><span>armários cheios de papéis</span></div>
+          <div class="pencil-mark">não jogar fora</div>
+        </article>
+        <article class="aesthetic-card writing-card">
+          <div class="card-index">03 / jeito de escrever</div>
+          <h2>Como uma anotação<br /><em>na margem.</em></h2>
+          <p>Textos curtos, íntimos e contemplativos. Não precisam explicar tudo. Às vezes, uma imagem simples já guarda uma história inteira.</p>
+          <div class="quote-mark">“</div>
+        </article>
+      </div>
+      <div class="aesthetic-footer"><span class="rule-symbol">✦</span><p>O arquivo não precisa estar completo.<br /><em>Precisa estar vivo.</em></p><button class="button button-primary" type="button" data-go="escrever">Escrever uma nota <span>↗</span></button></div>
+    </section>
+
+    <section class="page" id="escrever" aria-labelledby="write-title">
+      <div class="page-heading write-heading"><div><p class="kicker"><span class="kicker-line"></span> página em branco · 03</p><h1 id="write-title">Deixe uma nota<br /><em>na margem do céu.</em></h1></div><p class="heading-aside">Registre uma lembrança, uma fotografia ou apenas uma frase que não queira perder.</p></div>
+      <div class="write-layout">
+        <div class="write-manifesto"><span class="big-index">03</span><p>toda lembrança começa<br />como uma coisa pequena.</p><div class="manifesto-line"></div><span class="manifesto-note">salva neste navegador · sem conta</span></div>
+        <form class="note-form" id="noteForm">
+          <div class="form-row"><label for="title">Título ou primeira frase <span>obrigatório</span></label><input id="title" name="title" maxlength="100" placeholder="Uma noite de novembro..." required /></div>
+          <div class="form-row form-split"><div><label for="date">Data <span>opcional</span></label><input id="date" name="date" type="date" /></div><div><label for="kind">Formato</label><select id="kind" name="kind"><option value="texto">Só texto</option><option value="foto">Com imagem</option></select></div></div>
+          <div class="form-row"><label for="bodyText">Sua nota <span>obrigatório</span></label><textarea id="bodyText" name="bodyText" maxlength="1000" placeholder="Escreva como quem deixa um bilhete dentro de um livro..." required></textarea><div class="character-count"><span id="charCount">0</span> / 1000</div></div>
+          <div class="form-row image-field"><label for="imageDesc">Legenda da imagem <span>opcional</span></label><input id="imageDesc" name="imageDesc" maxlength="100" placeholder="Uma caneca perto da janela..." /></div>
+          <div class="form-row image-upload-row" id="imageUploadRow" hidden><label for="imageFile">Adicionar imagem <span>opcional · até 5 MB</span></label><input id="imageFile" type="file" accept="image/png,image/jpeg,image/webp" /><small class="upload-hint">A imagem será reduzida e guardada somente neste navegador.</small><div class="note-image-preview" id="noteImagePreview" hidden><img id="noteImagePreviewImage" alt="Prévia da imagem do post" /><button class="remove-note-image" id="removeNoteImage" type="button">remover imagem</button></div></div>
+          <button class="button button-primary" type="submit">Guardar no caderno <span>✦</span></button>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>feito de papel, silêncio e pequenos pontos de luz</span><span>✦</span><span>estrelário / 26</span></footer>
+
+  <div class="modal" id="noteModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-card">
+      <button class="close-button" type="button" aria-label="Fechar nota" data-close-modal>×</button>
+      <div class="modal-topline"><span id="modalMeta">caderno · 11 nov 2026</span><span id="modalNumber">01 / 17</span></div>
+      <div class="modal-symbol">✦</div>
+      <h2 id="modalTitle">Uma nota</h2>
+      <p class="modal-body" id="modalBody"></p>
+      <p class="modal-image" id="modalImage"></p><div class="modal-uploaded-image" id="modalUploadedImage" hidden></div>
+      <div class="comment-area"><div class="comment-heading"><h3>À margem</h3><span id="commentCount">0 comentários</span></div><div id="comments"></div><div class="comment-compose"><input id="commentInput" maxlength="160" placeholder="Deixe um comentário..." /><button class="button button-small" type="button" id="commentButton">Comentar <span>↗</span></button></div></div>
+    </article>
+  </div>
+  <div class="modal" id="profileModal" aria-hidden="true" role="dialog" aria-labelledby="profileTitle">
+    <div class="modal-backdrop" data-profile-close></div>
+    <article class="modal-card profile-modal-card">
+      <button class="close-button" type="button" aria-label="Fechar perfil" data-profile-close>×</button>
+      <div class="modal-topline"><span>caderno privado</span><span>sem conta · neste navegador</span></div>
+      <div class="profile-hero"><div class="profile-avatar" id="profileAvatar">○</div><div><div class="profile-private-label" id="profileVisibilityBadge"><span class="private-lock">⌑</span> perfil privado</div><h2 id="profileTitle">Quem deixa as notas?</h2></div></div>
+      <p class="profile-intro">Crie uma pequena identidade para assinar suas margens. Esses dados ficam salvos somente neste navegador.</p>
+      <div class="profile-tabs" role="tablist" aria-label="Configurações do perfil"><button class="profile-tab active" type="button" role="tab" aria-selected="true" data-profile-tab="basic">Perfil</button><button class="profile-tab" type="button" role="tab" aria-selected="false" data-profile-tab="security">Segurança e privacidade</button></div>
+      <form class="profile-form" id="profileForm">
+        <div class="profile-panel active" data-profile-panel="basic" role="tabpanel">
+          <div class="profile-photo-row"><div class="profile-photo-preview" id="profilePhotoPreview">○</div><div><label for="profilePhoto">Foto de perfil <span>opcional</span></label><input id="profilePhoto" type="file" accept="image/png,image/jpeg,image/webp" /><small>Use uma imagem quadrada de até 2 MB.</small><button class="remove-photo" type="button" data-photo-remove>remover foto</button></div></div>
+          <div class="form-row"><label for="profileName">Nome de exibição <span>obrigatório</span></label><input id="profileName" maxlength="50" placeholder="Seu nome ou apelido" required /></div>
+          <div class="form-row"><label for="profileHandle">Identificador <span>opcional</span></label><input id="profileHandle" maxlength="24" placeholder="@nome.na.margem" /></div>
+          <div class="form-row"><label for="profileBio">Uma frase sobre você <span>opcional</span></label><textarea id="profileBio" maxlength="160" placeholder="coleciono pequenas coisas..."></textarea></div>
+        </div>
+        <div class="profile-panel" data-profile-panel="security" role="tabpanel" hidden>
+          <div class="visibility-control"><div><strong id="profileVisibilityLabel">Perfil privado</strong><small id="profileVisibilityHint">Somente você pode ver suas informações.</small></div><label class="switch" for="profileVisibility"><input id="profileVisibility" type="checkbox" checked /><span class="switch-track"></span></label></div>
+          <div class="security-option"><label for="profileInteraction">Quem pode interagir com seu perfil?</label><select id="profileInteraction"><option value="nobody">Ninguém</option><option value="approved">Somente perfis aprovados</option><option value="everyone">Qualquer pessoa</option></select><small>Define quem pode comentar ou reagir às suas notas.</small></div>
+          <div class="security-option"><label for="profileMessages">Quem pode enviar mensagens?</label><select id="profileMessages"><option value="nobody">Ninguém</option><option value="approved">Somente perfis aprovados</option><option value="everyone">Qualquer pessoa</option></select><small>Você poderá mudar esta escolha a qualquer momento.</small></div>
+          <div class="follow-requests-section"><div class="requests-heading"><strong>Solicitações para seguir</strong><span id="followRequestCount">0</span></div><div id="followRequestsList" class="follow-requests-list"></div></div>
+          <div class="post-moderation-section"><div class="requests-heading"><strong>Segurança dos posts</strong><span id="moderationPostCount">0</span></div><p class="moderation-note">Acesso do proprietário local. Remova publicações mal-intencionadas ou que violem a segurança do caderno. A remoção fica salva somente neste navegador.</p><div id="moderationPostsList" class="moderation-posts-list"></div></div>
+          <div class="profile-privacy-note" id="profilePrivacyNote"><span>⌑</span><p><strong>Privado por padrão</strong><br />Seu perfil não é enviado para nenhum servidor.</p></div>
+        </div>
+        <button class="profile-preview-button" type="button" data-profile-preview>◉ visualizar como visitante <span>↗</span></button>
+        <button class="button button-primary" type="submit">Guardar meu perfil <span>✦</span></button>
+        <p class="form-message" id="profileMessage" role="status"></p>
+      </form>
+    </article>
+  </div>
+  <div class="modal" id="profilePreviewModal" aria-hidden="true" role="dialog" aria-labelledby="profilePreviewTitle">
+    <div class="modal-backdrop" data-profile-preview-close></div>
+    <article class="modal-card profile-preview-modal-card">
+      <button class="close-button" type="button" aria-label="Fechar prévia" data-profile-preview-close>×</button>
+      <div class="modal-topline"><span>prévia de visibilidade</span><span>como visitante</span></div>
+      <div class="preview-ribbon">VISUALIZAÇÃO DE TESTE · NÃO É PUBLICAÇÃO</div>
+      <div class="visitor-profile-head"><div class="profile-avatar" id="previewAvatar">○</div><div><div class="profile-private-label" id="previewVisibilityBadge"><span class="private-lock">⌑</span> perfil privado</div><h2 id="profilePreviewTitle">Seu perfil</h2><p id="previewHandle"></p></div></div>
+      <p class="visitor-bio" id="previewBio"></p>
+      <div class="private-preview-state" id="privatePreviewState"><span>⌑</span><div><strong>Este perfil é privado</strong><p>Visitantes não podem ver suas notas pessoais.</p></div></div>
+      <div class="follow-request-area" id="followRequestArea"><button class="button button-small" type="button" id="previewFollowButton">Solicitar para seguir <span>＋</span></button><p id="followRequestStatus"></p></div>
+      <div class="visitor-actions" id="visitorActions"><button class="button button-small" type="button" id="previewMessageButton">Enviar mensagem <span>↗</span></button><button class="preview-action-secondary" type="button" id="previewInteractButton">Interagir com as notas</button></div>
+      <p class="preview-permission-note" id="previewPermissionNote"></p>
+    </article>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
